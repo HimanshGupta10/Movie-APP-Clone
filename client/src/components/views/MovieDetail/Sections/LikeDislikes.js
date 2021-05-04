@@ -161,21 +161,21 @@ function LikeDislikes(props) {
         <React.Fragment>
             <span key="comment-basic-like">
                 <Tooltip title="Like">
-                    <Icon type="like"
+                    <Icon style={{ fontSize: '30px'}} type="like"
                         theme={LikeAction === 'liked' ? 'filled' : 'outlined'}
                         onClick={onLike} />
                 </Tooltip>
-                <span style={{ paddingLeft: '8px', cursor: 'auto' }}>{Likes}</span>
+                <span style={{ paddingLeft: '8px', cursor: 'auto', fontSize: '20px' }}>{Likes}</span>
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span key="comment-basic-dislike">
                 <Tooltip title="Dislike">
-                    <Icon
+                    <Icon style={{ fontSize: '30px'}}
                         type="dislike"
                         theme={DislikeAction === 'disliked' ? 'filled' : 'outlined'}
                         onClick={onDisLike}
                     />
                 </Tooltip>
-                <span style={{ paddingLeft: '8px', cursor: 'auto' }}>{Dislikes}</span>
+                <span style={{ paddingLeft: '8px', cursor: 'auto', fontSize: '20px' }}>{Dislikes}</span>
             </span>
         </React.Fragment>
     )

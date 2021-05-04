@@ -6,7 +6,7 @@ function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
       <Menu.Item key="favorite">
-        <a href="/favorite">Favorites</a>
+        <a href="/favorite">Watchlist</a>
       </Menu.Item>
     </Menu>
   )

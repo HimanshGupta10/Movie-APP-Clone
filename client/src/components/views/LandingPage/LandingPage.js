@@ -17,19 +17,11 @@ function LandingPage() {
         fetchMovies(endpoint)
     }, [])
 
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-    }, [])
-
-
     const fetchMovies = (endpoint) => {
 
         fetch(endpoint)
             .then(result => result.json())
             .then(result => {
-                // console.log(result)
-                // console.log('Movies',...Movies)
-                // console.log('result',...result.results)
                 setMovies([...Movies, ...result.results])
                 setMainMovieImage(MainMovieImage || result.results[0])
                 setCurrentPage(result.page)
@@ -47,21 +39,6 @@ function LandingPage() {
 
     }
 
-    const handleScroll = () => {
-        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        const body = document.body;
-        const html = document.documentElement;
-        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        const windowBottom = windowHeight + window.pageYOffset;
-        if (windowBottom >= docHeight - 1) {
-
-            // loadMoreItems()
-            console.log('clicked')
-            buttonRef.current.click();
-
-        }
-    }
-
     return (
         <div style={{ width: '100%', margin: '0' }}>
             {MainMovieImage &&
@@ -73,7 +50,7 @@ function LandingPage() {
 
             }
 
-            <div style={{ width: '85%', margin: '1rem auto' }}>
+            <div style={{ width: '75%', margin: '1rem auto' }}>
 
                 <Title level={2} > Movies by latest </Title>
                 <hr />
@@ -96,7 +73,7 @@ function LandingPage() {
 
                 <br />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button ref={buttonRef} className="loadMore" onClick={loadMoreItems}>Load More</button>
+                    <Button type='primary' shape='round' size='large' ref={buttonRef} className="loadMore" onClick={loadMoreItems}>Load More</Button>
                 </div>
             </div>
 

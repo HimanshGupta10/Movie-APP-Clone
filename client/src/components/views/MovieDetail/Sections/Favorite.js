@@ -80,7 +80,7 @@ function Favorite(props) {
 
     return (
         <>
-            <Button onClick={onClickFavorite} > {!Favorited ? "Add to Favorite " : "Unfavorite "} {FavoriteNumber}</Button>
+            <Button shape='round' size='large' type='primary' onClick={onClickFavorite} > {!Favorited ? "Add to Watchlist " : "Remove From Watchlist "} {FavoriteNumber}</Button>
         </>
     )
 }

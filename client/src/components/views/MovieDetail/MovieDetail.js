@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { List, Avatar, Row, Col, Button } from 'antd';
+import { Row, Button } from 'antd';
 import axios from 'axios';
 
 import Comments from './Sections/Comments'
@@ -104,7 +104,7 @@ function MovieDetailPage(props) {
                 {/* Actors Grid*/}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <Button onClick={toggleActorView}>Toggle Actor View </Button>
+                    <Button shape='round' size='large' type='primary' onClick={toggleActorView}>Toggle Actor View </Button>
                 </div>
 
                 {ActorToggle &&
@@ -112,7 +112,7 @@ function MovieDetailPage(props) {
                         {
                             !LoadingForCasts ? Casts.map((cast, index) => (
                                 cast.profile_path &&
-                                <GridCards actor image={cast.profile_path} characterName={cast.characterName} />
+                                <GridCards actor image={cast.profile_path} characterName={cast.characterName} actorId={cast.id} profile_path={cast.profile_path}/>
                             )) :
                                 <div>Loading...</div>
                         }
