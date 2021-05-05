@@ -14,10 +14,10 @@ How to run the web app?
 
 1) Go to Movie-APP-Clone/server/config folder and add file dev.js and add the following content:
 
-module.exports = {
-    mongoURI:'<URI of MongoDB Atlas Cluster>'
-}
-  
+    module.exports = {
+        mongoURI:'URI of MongoDB Atlas Cluster'
+    }
+    
 Write the URI of MongoDB Atlas Cluster here.
   
 2) Go to root folder and run "npm install" to install server dependencies, then go to /Movie-App-Clone/client and run "npm install" to install react dependencies.
