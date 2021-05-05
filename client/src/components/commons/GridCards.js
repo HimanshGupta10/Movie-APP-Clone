@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col } from 'antd';
 import { IMAGE_BASE_URL } from '../Config';
+import './style.css';
 
 function GridCards(props) {
 
@@ -10,7 +11,7 @@ function GridCards(props) {
     if (actor) {
         return (
             <Col key={key} lg={8} md={12} xs={24}>
-                <div style={{ position: 'relative' }}>
+                <div className='mycard' style={{ position: 'relative' }}>
                     <a href={`/profile/${actorId}`}>
                     <img style={{ width: '100%', height: '420px' }} alt={characterName} src={`${IMAGE_BASE_URL}${POSTER_SIZE}${image}`} />
                     </a>
@@ -21,7 +22,7 @@ function GridCards(props) {
     else if(actorDetail){
         return (
             <Col key={key} lg={8} md={12} xs={24}>
-                <div style={{ position: 'relative' }}>
+                <div className='mycard' style={{ position: 'relative' }}>
                     <img style={{ width: '100%', height: '320px' }} alt={characterName} src={`${IMAGE_BASE_URL}${POSTER_SIZE}${image}`} />
                 </div>
             </Col>
@@ -29,7 +30,7 @@ function GridCards(props) {
     }else {
         return (
             <Col key={key} lg={8} md={12} xs={24}>
-                <div style={{ position: 'relative' }}>
+                <div className='mycard' style={{ position: 'relative' }}>
                     <a href={`/movie/${movieId}`} >
                         <img style={{ width: '100%', height: '420px' }} alt={movieName} src={image} />
                     </a>
